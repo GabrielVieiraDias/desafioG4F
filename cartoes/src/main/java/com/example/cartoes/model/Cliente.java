@@ -12,8 +12,12 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+
     private String email;
     private EnumScoreClient score;
+
+    private String conta;
+    private String nomeProposta;
 
     public Long getId() {
         return id;
@@ -45,4 +49,20 @@ public class Cliente {
     public void setScore(EnumScoreClient score) {
         this.score = score;
     }
+    public String getConta() {
+        return conta;
+    }
+
+    public void setConta(String conta) {
+        this.conta = conta;
+    }
+
+    public String getNomeProposta() {
+        return nomeProposta;
+    }
+
+    public void setNomeProposta(String nomeProposta) {
+        this.nomeProposta = nomeProposta;
+    }
+
 }

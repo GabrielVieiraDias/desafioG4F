@@ -35,7 +35,7 @@ public class CartaoService {
         int parte3 = random.nextInt(9999);
         int parte4 = random.nextInt(9999);
 
-        String random16DigitNumber = String.format("%04d%04d%04d%04d", parte1, parte2, parte3, parte4);
+        String random16DigitNumber = String.format("%04d-%04d-%04d-%04d", parte1, parte2, parte3, parte4);
 
         return random16DigitNumber;
     }

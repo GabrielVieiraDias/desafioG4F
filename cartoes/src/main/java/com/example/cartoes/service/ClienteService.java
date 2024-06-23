@@ -14,10 +14,25 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     public Cliente criarCliente(Cliente cliente){
-        return clienteRepository.save(cliente);
+                return clienteRepository.save(cliente);
     }
 
     public Optional<Cliente> buscarCliente(Long Id){
         return clienteRepository.findById(Id);
+    }
+
+    public Cliente criaProposta (Long id) throws Exception {
+        Optional<Cliente> cliente = buscarCliente(id);
+
+        if(cliente.isPresent()){
+            Cliente cliente1 = new Cliente();
+            cliente1.setConta("123");
+            cliente1.setEmail(cliente.get().getEmail());
+            cliente1.setId(cliente.get().getId());
+            cliente1.setNomeProposta("Proposta 1");
+            cliente1.setScore(cliente.get().getScore());
+            return cliente1;
+        }else
+            throw new Exception("Cliente não encontrado");
     }
 }

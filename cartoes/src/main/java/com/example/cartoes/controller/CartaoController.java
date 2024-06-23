@@ -16,9 +16,11 @@ public class CartaoController {
     @Autowired
     private CartaoService cartaoService;
 
-    @PostMapping("/emitir")
-    public Cartao emitirCartao(@RequestBody Cliente cliente) {
+    @PostMapping("/criar")
+    public Cartao criarCartao(@RequestBody Cliente cliente) {
         return cartaoService.criarCartao(cliente);
     }
+
+
 
 }
