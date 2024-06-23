@@ -21,6 +21,4 @@ public class CartaoController {
         return cartaoService.criarCartao(cliente);
     }
 
-
-
 }
